@@ -249,12 +249,13 @@
 ## relative to font.size, using the following values: xx-small, x-small,
 ## small, medium, large, x-large, xx-large, larger, or smaller
 
+#font.family:  sans-serif
 font.family:  serif
 #font.style:   normal
 #font.variant: normal
 #font.weight:  normal
 #font.stretch: normal
-font.size:    18.0
+font.size:    12.0
 
 #font.serif:      DejaVu Serif, Bitstream Vera Serif, Computer Modern Roman, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
 #font.sans-serif: DejaVu Sans, Bitstream Vera Sans, Computer Modern Sans Serif, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica, Avant Garde, sans-serif
@@ -365,9 +366,9 @@ font.size:    18.0
 #axes.titlecolor:    auto    # color of the axes title, auto falls back to
                              # text.color as default value
 #axes.titley:        None    # position title (axes relative units).  None implies auto
-axes.titlepad:      10.0     # pad between axes and title in points
+#axes.titlepad:      6.0     # pad between axes and title in points
 #axes.labelsize:     medium  # font size of the x and y labels
-axes.labelpad:      8.0     # space between label and axis
+#axes.labelpad:      4.0     # space between label and axis
 #axes.labelweight:   normal  # weight of the x and y labels
 #axes.labelcolor:    black
 #axes.axisbelow:     line    # draw axis gridlines and ticks:
@@ -461,11 +462,11 @@ axes.labelpad:      8.0     # space between label and axis
 #xtick.bottom:        True    # draw ticks on the bottom side
 #xtick.labeltop:      False   # draw label on the top
 #xtick.labelbottom:   True    # draw label on the bottom
-xtick.major.size:    8     # major tick size in points
+#xtick.major.size:    3.5     # major tick size in points
 #xtick.minor.size:    2       # minor tick size in points
 #xtick.major.width:   0.8     # major tick width in points
 #xtick.minor.width:   0.6     # minor tick width in points
-xtick.major.pad:     6     # distance to major tick label in points
+#xtick.major.pad:     3.5     # distance to major tick label in points
 #xtick.minor.pad:     3.4     # distance to the minor tick label in points
 #xtick.color:         black   # color of the ticks
 #xtick.labelcolor:    inherit # color of the tick labels or inherit from xtick.color
@@ -482,7 +483,7 @@ xtick.direction:     in     # direction: {in, out, inout}
 #ytick.right:         False   # draw ticks on the right side
 #ytick.labelleft:     True    # draw tick labels on the left side
 #ytick.labelright:    False   # draw tick labels on the right side
-ytick.major.size:    8     # major tick size in points
+#ytick.major.size:    3.5     # major tick size in points
 #ytick.minor.size:    2       # minor tick size in points
 #ytick.major.width:   0.8     # major tick width in points
 #ytick.minor.width:   0.6     # minor tick width in points
