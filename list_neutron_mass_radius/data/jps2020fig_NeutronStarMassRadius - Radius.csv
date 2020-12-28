@@ -1,0 +1,15 @@
+Mass (Msun),M minus error,M plus error,Radius (km),R minus error ,R plus error,Error confidence,Method,Target,Reference,
+1.44,0.14,0.15,13.02,1.06,1.24,1σ (68%),X-ray profile,PSR J0030+0451,Miller et al. 2019,https://iopscience.iop.org/article/10.3847/2041-8213/ab50c5
+1.34,0.16,0.15,12.71,1.19,1.14,1σ (68%),X-ray profile,PSR J0030+0451,Riley et al. 2019,https://arxiv.org/abs/1912.05702
+1.4,(fix),(fix),9.6,1.1,0.9,1σ (68%),qLMXB in GC,47 Tuc X-5,Bogdanov et al. 2016,https://arxiv.org/abs/1603.01630
+1.4,(fix),(fix),11.1,0.7,0.8,1σ (68%),qLMXB in GC,47 Tuc X-7,Bogdanov et al. 2016,https://arxiv.org/abs/1603.01630
+1.4,(fix),(fix),--,11.0,14.3,95%,qLMXB in GC,8 qLMXBs in GC,Steiner et al. 2018,https://ui.adsabs.harvard.edu/abs/2018MNRAS.476..421S/abstract
+1.4,(fix),(fix),--,11.5,13.0,90%,qLMXB in GC,7 qLMXBs in GC,Baillot d'Etivaux et al. 2019,https://arxiv.org/abs/1905.01081
+1.9,0.3,0.3,12.4,0.4,0.4,1σ (68%),X-ray bursts,4U 1702-429,Nattila et al. 2017,https://arxiv.org/abs/1709.09120
+1.4,(fix),(fix),--,11.2,12.3,95%,X-ray bursts + qLMXBs,4 Bursters & 4 qLMXBs,Steiner et al. 2013,https://ui.adsabs.harvard.edu/abs/2013ApJ...765L...5S/abstract
+1.4,(fix),(fix),--,11.13,12.33,90%,X-ray bursts + qLMXBs,Bursters & qLMXBs,"Lattimer & Steiner, 2014",https://arxiv.org/abs/1403.1186
+1.5,(fix),(fix),--,10.1,11.1,95%?,X-ray bursts + qLMXBs,6 Bursters & 6 qLMXBs,Ozel et al. 2016,https://iopscience.iop.org/article/10.3847/0004-637X/820/1/28
+1.44,0.07,0.07,13.6,0.8,0.9,1σ (68%),thermal emission ,PSR J0437–4715,Gonzalez-Caniulef et al. 2019,https://arxiv.org/abs/1904.12114
+heavior,1.36,2.26,10.8,1.7,2.0,90%,Gravitational wave,GW170817,Abbott et al. 2019,https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.121.161101
+lighter,0.86,1.36,10.7,1.5,2.1,same above ,Gravitational wave,same above ,same above ,same above 
+--,--,--,--,--,--,--,Gravitational wave,GW170817,Zhao & Lattimer 2020,https://journals.aps.org/prd/abstract/10.1103/PhysRevD.98.063020
