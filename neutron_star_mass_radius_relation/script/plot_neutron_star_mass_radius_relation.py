@@ -15,11 +15,11 @@ def cm2inch(*tupl):
 	else:
 		return tuple(i/inch for i in tupl)
 
-MRname = [
+mr_model_list = [
 	'APR',
 	'BL',	
 	'CMF',	
-	'DD2_FRG2f',		
+#	'DD2_FRG2f',		
 	'DD2_FRG3f',
 	'SKa',	
 	'SLY9',	
@@ -35,10 +35,12 @@ MRname = [
 # MAIN
 ##############
 
-df_rhoP = pd.read_excel('data/EOS.xlsx',engine='openpyxl',sheet_name=None,header=None,names=['density','n/a','pressure'])
-df_rhoP['SLY230a'] = df_rhoP['SLY230a'].drop(index=0)
-del df_rhoP['Sheet13']
+# ------ Density vs. Pressure ------
 
+df_rhoP = pd.read_excel('data/EOS.xlsx',engine='openpyxl',
+	sheet_name=None,header=None,names=['density','n/a','pressure'])
+df_rhoP['SLY230a'] = df_rhoP['SLY230a'].drop(index=0) # this sheet the header line 
+del df_rhoP['Sheet13'] # this is null ssheet
 
 plt.style.use('script/matplotlibrc.template')
 # For guidance, Nature's standard figure sizes are 89 mm wide (single column) and 183 mm wide (double column). 
@@ -48,7 +50,7 @@ fig = plt.figure(figsize=cm2inch(22.0,17.0))
 ax1 = fig.add_subplot(111)
 
 zorder = 0
-for sheet_name in MRname:
+for sheet_name in mr_model_list:
 	print(sheet_name)
 	ax1.plot(df_rhoP[sheet_name]['density'],df_rhoP[sheet_name]['pressure'],
 		label=sheet_name,zorder=zorder)
@@ -67,21 +69,24 @@ fig.patch.set_alpha(0.0)
 ax1.patch.set_alpha(0.0) 
 fig.savefig("neutron_star_pressure_density.pdf")
 
-exit()
-
-
-"""
+# ------ Mass vs. Radius ------
 
 mr_dict = {}
-for mrfile_path in glob.glob('data/compMR_wCrust/*'):
-	print(mrfile_path)
-	mrname, filetype = os.path.splitext(os.path.basename(mrfile_path))
-	if filetype == '.eps':
-		continue
-	print(mrname)
-	mr_dict[mrname] = pd.read_csv(mrfile_path,delim_whitespace=True,names=['Radius','Mass'],skiprows=1)
-
+for mr_model in mr_model_list:
+	mr_file = 'data/compEOS/%s.mr' % mr_model
+	mr_dict[mr_model] = pd.read_csv(mr_file,delim_whitespace=True,
+		names=['Radius','Mass'],skiprows=1)
 print(mr_dict)	
+
+plt.style.use('script/matplotlibrc.template')
+
+# For guidance, Nature's standard figure sizes are 89 mm wide (single column) and 183 mm wide (double column). 
+# The full depth of a Nature page is 247 mm. Figures can also be a column-and-a-half where necessary (120–136 mm).
+
+#fig = plt.figure(figsize=cm2inch(12.8, 9.6))
+#fig = plt.figure(figsize=cm2inch(21.0,14.8))
+fig = plt.figure(figsize=cm2inch(22.0,17.0))
+ax1 = fig.add_subplot(111)
 
 xx = np.linspace(8,16)
 yy = 2 / 2.83 / 3 * xx
@@ -92,7 +97,10 @@ for mrname in mr_dict:
 	print(mrname)
 	ax1.plot(mr_dict[mrname]['Radius'],mr_dict[mrname]['Mass'],label=mrname,zorder=zorder)
 	zorder+=1
-
+ax1.set_xlim(8,16)
+ax1.set_ylim(0,3)
+ax1.set_xlabel('Radius (km)')
+ax1.set_ylabel('Mass (Solar mass)')
 
 # https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.120.172702 
 # R<13.76 km for 1.4 Msun
@@ -117,5 +125,9 @@ ax1.axhline(y=2.01,color="#F39C12",zorder=zorder);zorder+=1
 ax1.axhline(y=1.93,color="#F39C12",zorder=zorder);zorder+=1
 
 
+ax1.legend(loc='lower left',borderaxespad=1,fontsize=10,ncol=2)
 
-"""
+plt.tight_layout()
+fig.patch.set_alpha(0.0)
+ax1.patch.set_alpha(0.0) 
+fig.savefig("neutron_star_mass_radius.pdf")
