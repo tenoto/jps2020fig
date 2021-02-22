@@ -18,7 +18,7 @@ def cm2inch(*tupl):
 mr_model_list = [
 	'APR',
 	'BL',	
-#	'CMF',	
+	'CMF',	
 #	'DD2_FRG2f',		
 	'DD2_FRG3f',
 	'SKa',	
@@ -79,7 +79,7 @@ for sheet_name in mr_model_list:
 		label=sheet_name,zorder=zorder)
 	zorder+=1 
 
-ax1.plot(Raai_core_x,Raai_core_y,'-')
+#ax1.plot(Raai_core_x,Raai_core_y,'-')
 ax1.plot(Raai_cont_x,Raai_cont_y,'--k')
 
 #ax1.set_xlim(0.01,0.18)
