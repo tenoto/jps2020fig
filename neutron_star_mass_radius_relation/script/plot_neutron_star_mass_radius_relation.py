@@ -38,7 +38,7 @@ mr_model_list = [
 # ------ Density vs. Pressure ------
 
 #df_rhoP = pd.read_excel('data/EOS.xlsx',engine='openpyxl',
-df_rhoP = pd.read_excel('data/EOS_v210221.xlsx',engine='openpyxl',
+df_rhoP = pd.read_excel('data/EOS_v210223.xlsx',engine='openpyxl',
 	sheet_name=None,header=None,names=['density','n/a','pressure','n/a','energy_density'])
 df_rhoP['SLY230a'] = df_rhoP['SLY230a'].drop(index=0) # this sheet the header line 
 del df_rhoP['Sheet13'] # this is null ssheet

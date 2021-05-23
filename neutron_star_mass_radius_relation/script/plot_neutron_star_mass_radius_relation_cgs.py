@@ -152,6 +152,12 @@ ax1.errorbar([13.02],[1.44],xerr=[[1.06],[1.24]],yerr=[[0.14],[0.15]],zorder=zor
 	fmt='o',markersize=10,ecolor='r',markeredgecolor="black",linewidth=2,color='r')
 zorder+=1 
 
+# PSR J0740+6620 
+# arxiv 2105.06980
+ax1.errorbar([12.39],[2.072],xerr=[[0.98],[1.30]],yerr=[[0.066],[0.067]],zorder=zorder,
+	fmt='o',markersize=10,ecolor='r',markeredgecolor="black",linewidth=2,color='r')
+zorder+=1 
+
 # Demorest 2010, J1614-2230, 1.97+/-0.04 Msun
 ax1.axhline(y=2.01,color="#F39C12",zorder=zorder);zorder+=1
 ax1.axhline(y=1.93,color="#F39C12",zorder=zorder);zorder+=1
